@@ -1,0 +1,11 @@
+
+
+main:
+li $v0, 5
+syscall
+move $t0, $v0
+
+
+la $a0, $t0 #load address insert_into from memory and store it into arguement register 0
+li $v0, 4 #loads the value 4 into register $v0 which is the op code for print string
+syscall #reads register $v0 for op code, sees 4 and prints the string located in $a0
